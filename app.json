@@ -36,6 +36,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "db254fd8-43cb-480f-83c8-f5d20d40ae48"
+      }
+    },
+    "owner": "chethaka03"
   }
 }
