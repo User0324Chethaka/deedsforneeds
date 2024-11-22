@@ -1,1 +1,0 @@
-- [ ] run 'npm audit' and fix vulnerabilities before deployment
