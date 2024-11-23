@@ -13,3 +13,9 @@
 - [ ] [firebase functions](https://rnfirebase.io/functions/usage)
 - [ ] [firebase cloud messaging](https://rnfirebase.io/messaging/usage)
 - [ ] [firebase cloud storage](https://rnfirebase.io/storage/usage)
+
+# Self notes
+
+- sans-serif font used: Roboto
+- serif font used (for logo): Cardo
+- main blue these used: #0836AF
