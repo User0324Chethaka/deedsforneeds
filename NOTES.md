@@ -1,6 +1,7 @@
 # Todo
 
 - [ ] run 'npm audit' and fix vulnerabilities before deployment
+- [ ] add Apache license for Roboto font
 
 # Library suggestions
 
