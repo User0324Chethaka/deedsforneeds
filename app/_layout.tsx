@@ -1,11 +1,14 @@
+import { useEffect } from "react";
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
 
-// Import your global CSS file
 import "../global.css";
 
+SplashScreen.preventAutoHideAsync();
+
 const RootLayout = () => {
-  const [fontsLoaded] = useFonts({
+  const [loaded, error] = useFonts({
     "Roboto-Thin": require("@/assets/fonts/Roboto-Thin.ttf"),
     "Roboto-Thin-Italic": require("@/assets/fonts/Roboto-ThinItalic.ttf"),
     "Roboto-Light": require("@/assets/fonts/Roboto-Light.ttf"),
@@ -20,7 +23,13 @@ const RootLayout = () => {
     "Roboto-Black-Italic": require("@/assets/fonts/Roboto-BlackItalic.ttf"),
   });
 
-  if (!fontsLoaded) return null;
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  if (!loaded && !error) return null;
 
   return (
     <Stack>

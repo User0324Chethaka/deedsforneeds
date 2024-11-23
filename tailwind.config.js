@@ -19,6 +19,9 @@ module.exports = {
         black: ["Roboto-Black", "sans-serif"],
         "black-italic": ["Roboto-Black-Italic", "sans-serif"],
       },
+      colors: {
+        main: "#0836AF",
+      },
     },
   },
   plugins: [],

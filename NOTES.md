@@ -18,4 +18,4 @@
 
 - sans-serif font used: Roboto
 - serif font used (for logo): Cardo
-- main blue these used: #0836AF
+- main blue theme used: #0836AF
