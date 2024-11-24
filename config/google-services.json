@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "222894395210",
+    "project_id": "deedsforneedsexpo",
+    "storage_bucket": "deedsforneedsexpo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222894395210:android:2fbff6fb13245bc6d1bbb3",
+        "android_client_info": {
+          "package_name": "com.deedsforneeds"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7cRfr6RZ3_39X3C7kJG3TEIbtGwd8l9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

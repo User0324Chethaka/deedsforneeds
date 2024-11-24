@@ -14,9 +14,11 @@
     },
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "googleServicesFile": "./config/GoogleService-Info.plist"
     },
     "android": {
+      "googleServicesFile": "./config/google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#0836AF"
@@ -24,7 +26,19 @@
       "package": "com.deedsforneeds"
     },
     "web": {},
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ],
     "experiments": {
       "typedRoutes": true
     },
