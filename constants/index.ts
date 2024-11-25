@@ -1,16 +1,27 @@
 import { Dimensions } from "react-native";
 import welcome from "@/assets/images/welcome.webp";
+import logoWhite from "@/assets/images/logo-white.png";
+import logoBlue from "@/assets/images/logo-blue.png";
 
-import { FontSizeTypes, DimensionTypes } from "@/types/type";
+import {
+  FontSizeTypes,
+  DimensionTypes,
+  WindowPaddingTypes,
+} from "@/types/type";
 
 const { width, height, fontScale } = Dimensions.get("window");
 const baseFontSize: number = width * 0.035 * fontScale;
 
-export const dimensions: DimensionTypes = {
-  ww: width,
-  wh: height,
-  diameter: Math.sqrt(width ** 2 + height ** 2),
-};
+// export const dimensions: DimensionTypes = {
+//   ww: width,
+//   wh: height,
+//   diameter: Math.sqrt(width ** 2 + height ** 2),
+// };
+
+// export const windowPadding: WindowPaddingTypes = {
+//   vertical: dimensions.wh * 0.03,
+//   horizontal: dimensions.ww * 0.01,
+// };
 
 export const fontSizes: FontSizeTypes = {
   sm: baseFontSize * 0.8,
@@ -24,4 +35,6 @@ export const fontSizes: FontSizeTypes = {
 
 export const images = {
   welcome: welcome,
+  logoWhite: logoWhite,
+  logoBlue: logoBlue,
 };
