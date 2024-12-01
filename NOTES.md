@@ -19,3 +19,31 @@
 - sans-serif font used: Roboto
 - serif font used (for logo): Cardo
 - main blue theme used: #0836AF
+- user password is 123456@A
+
+/app/index.tsx
+// import React, { useState, useEffect } from "react";
+// import { Redirect } from "expo-router";
+// import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
+
+// const Index = () => {
+// const [initializing, setInitializing] = useState(true);
+// const [user, setUser] = useState<FirebaseAuthTypes.User | null | undefined>(); // Allow undefined and null
+
+// useEffect(() => {
+// const subscriber = auth().onAuthStateChanged((user) => {
+// setUser(user);
+// if (initializing) setInitializing(false);
+// });
+
+// return subscriber;
+// }, []);
+
+// if (initializing) return null;
+
+// if (user) return <Redirect href={"/(root)/"} />;
+
+// return <Redirect href={"/(auth)/welcome"} />;
+// };
+
+// export default Index;

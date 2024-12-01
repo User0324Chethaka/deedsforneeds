@@ -9,7 +9,10 @@ import {
   ActivityIndicator,
   Alert,
   Image,
+  ScrollView,
 } from "react-native";
+import { useLocalSearchParams } from "expo-router";
+import auth from "@react-native-firebase/auth";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { colors, icons } from "@/constants";
@@ -17,6 +20,7 @@ import CustomButton from "@/components/customButton";
 import InputField from "@/components/inputField";
 
 const CreateAccount = () => {
+  const { email } = useLocalSearchParams();
   const [password, setPassword] = useState("");
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const [passwordConditions, setPasswordConditions] = useState({
@@ -26,6 +30,39 @@ const CreateAccount = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  const validEmail = Array.isArray(email) ? email[0] : email;
+
+  const handlePasswordChange = (text: string) => {
+    setPassword(text);
+
+    setPasswordConditions({
+      hasUppercase: /[A-Z]/.test(text),
+      hasSpecialChar: /[!@#$%^&*]/.test(text),
+      isLengthValid: text.length >= 8,
+    });
+  };
+
+  const handleCrateAccount = async () => {
+    setSubmitted(true);
+    try {
+      await auth().createUserWithEmailAndPassword(validEmail, password);
+      Alert.alert("Success", "Account created successfully!");
+    } catch (error) {
+      if (error instanceof Error) {
+        if (error.message.includes("auth/email-already-in-use")) {
+          Alert.alert("Error", "The email address is already in use!");
+        } else if (error.message.includes("auth/invalid-email")) {
+          Alert.alert("Error", "The email address is invalid");
+        } else {
+          Alert.alert("Error", error.message);
+        }
+      } else {
+        Alert.alert("Error", "An unknown error occurred");
+      }
+    }
+    setSubmitted(false);
+  };
+
   return (
     <SafeAreaView className={`flex bg-gray-50 h-full px-[5vw]`}>
       <StatusBar backgroundColor={colors.primaryBg} style="dark" />
@@ -34,7 +71,13 @@ const CreateAccount = () => {
         style={{ flex: 1 }}
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <>
+          <ScrollView
+            contentContainerStyle={{
+              flexGrow: 1,
+            }}
+            showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+          >
             <Text className="font-medium text-left mt-0 mb-[12vh] text-5xl">
               Enter{"\n"}password
             </Text>
@@ -52,8 +95,8 @@ const CreateAccount = () => {
                     setSecureTextEntry((previousVal) => !previousVal)
                   }
                   value={password}
-                  onChangeText={(text) => setPassword(text)}
-                  keyboardType="email-address"
+                  keyboardType="default"
+                  onChangeText={(text) => handlePasswordChange(text)}
                   autoCapitalize="none"
                   Icon={() => (
                     <Image
@@ -82,11 +125,12 @@ const CreateAccount = () => {
                   title="Create an Account"
                   className="bg-primary-500"
                   textClassName="text-primary-50"
-                  disabled={submitted} // submitted is set to true when button pressed
+                  disabled={submitted}
+                  onPress={() => handleCrateAccount()}
                 />
               </View>
             )}
-          </>
+          </ScrollView>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
     </SafeAreaView>

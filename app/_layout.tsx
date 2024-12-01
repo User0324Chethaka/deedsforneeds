@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -8,6 +9,8 @@ import "../global.css";
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
+  const [user, setUser] = useState<FirebaseAuthTypes.User | null | undefined>(); // Allow undefined and null
+  const [initializing, setInitializing] = useState(true);
   const [loaded, error] = useFonts({
     "Roboto-Thin": require("@/assets/fonts/Roboto-Thin.ttf"),
     "Roboto-Thin-Italic": require("@/assets/fonts/Roboto-ThinItalic.ttf"),
@@ -29,13 +32,24 @@ const RootLayout = () => {
     }
   }, [loaded, error]);
 
-  if (!loaded && !error) return null;
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged((user) => {
+      setUser(user);
+      if (initializing) setInitializing(false);
+    });
+
+    return subscriber;
+  });
+
+  if (!loaded && !error && initializing) return null;
 
   return (
     <Stack>
-      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-      <Stack.Screen name="(root)" options={{ headerShown: false }} />
-      <Stack.Screen name="index" options={{ headerShown: false }} />
+      {user ? (
+        <Stack.Screen name="(root)" options={{ headerShown: false }} />
+      ) : (
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      )}
     </Stack>
   );
 };

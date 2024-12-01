@@ -77,7 +77,7 @@ const SignUp = () => {
                   className="bg-primary-500"
                   textClassName="text-primary-50"
                   disabled={submitted}
-                  onPress={handleEmailSubmit}
+                  onPress={() => handleEmailSubmit()}
                 />
                 <View className="flex-row items-center">
                   <View className="flex-1 h-px bg-gray-300" />

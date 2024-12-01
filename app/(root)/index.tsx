@@ -1,8 +1,8 @@
 import React from "react";
-import { Text } from "react-native";
+import { Redirect } from "expo-router";
 
 const Index = () => {
-  return <Text>app/(root)/index.tsx</Text>;
+  return <Redirect href={"/(root)/(onboarding)/getName"} />;
 };
 
 export default Index;
