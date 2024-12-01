@@ -1,11 +1,41 @@
 import { Stack } from "expo-router";
+import { colors } from "@/constants";
 
 const Layout = () => {
   return (
     <Stack>
       <Stack.Screen name="welcome" options={{ headerShown: false }} />
-      <Stack.Screen name="signIn" options={{ headerShown: false }} />
-      <Stack.Screen name="signUp" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="signIn"
+        options={{
+          headerTitle: "",
+          headerStyle: { backgroundColor: colors.primaryBg },
+          headerShadowVisible: false,
+          headerTintColor: colors.primary,
+        }}
+      />
+      <Stack.Screen
+        name="signUp"
+        options={{
+          headerTitle: "",
+          headerStyle: {
+            backgroundColor: colors.primaryBg,
+          },
+          headerShadowVisible: false,
+          headerTintColor: colors.primary,
+        }}
+      />
+      <Stack.Screen
+        name="createAccount"
+        options={{
+          headerTitle: "",
+          headerStyle: {
+            backgroundColor: colors.primaryBg,
+          },
+          headerShadowVisible: false,
+          headerTintColor: colors.primary,
+        }}
+      />
     </Stack>
   );
 };

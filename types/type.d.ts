@@ -1,4 +1,4 @@
-import { TouchableOpacityProps } from "react-native";
+import { TouchableOpacityProps, TextInputProps } from "react-native";
 
 declare interface ButtonProps extends TouchableOpacityProps {
   title: string;
@@ -13,6 +13,24 @@ declare interface ButtonProps extends TouchableOpacityProps {
   IconLeft?: React.ComponentType<any>;
   IconRight?: React.ComponentType<any>;
   className?: string;
+  textClassName?: string;
+}
+
+declare interface ToggleSecureEntryProps extends TouchableOpacityProps {
+  secureTextEntry: boolean;
+}
+
+declare interface InputFieldProps extends TextInputProps {
+  label: string;
+  Icon?: React.ComponentType<any>;
+  secureTextEntry?: boolean;
+  onPressSecureTextEntry?: () => void;
+  labelStyle?: string;
+  containerStyle?: string;
+  inputStyle?: string;
+  iconStyle?: string;
+  className?: string;
+  passwordEntry?: boolean;
 }
 
 interface FontSizeTypes {
@@ -25,13 +43,20 @@ interface FontSizeTypes {
   "5xl": number;
 }
 
-interface DimensionTypes {
-  ww: number;
-  wh: number;
-  diameter: number;
-}
+// interface DimensionTypes {
+//   ww: number;
+//   wh: number;
+//   diameter: number;
+// }
 
-interface WindowPaddingTypes {
-  vertical: number;
-  horizontal: number;
+// interface WindowPaddingTypes {
+//   vertical: number;
+//   horizontal: number;
+// }
+
+interface ColorsTypes {
+  primary: string;
+  primaryBg?: string;
+  secondaryBg?: string;
+  gray600?: string;
 }
