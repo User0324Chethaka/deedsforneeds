@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { TouchableOpacityProps, TextInputProps } from "react-native";
 
 declare interface ButtonProps extends TouchableOpacityProps {
@@ -56,7 +57,15 @@ interface FontSizeTypes {
 
 interface ColorsTypes {
   primary: string;
-  primaryBg?: string;
+  gray50?: string;
   secondaryBg?: string;
   gray600?: string;
+}
+
+interface OnboardingViewProps {
+  title: string;
+  onPressTitle?: string;
+  submitted: boolean;
+  children?: ReactNode;
+  onPress?: () => void;
 }

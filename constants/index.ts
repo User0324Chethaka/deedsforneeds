@@ -44,6 +44,6 @@ export const icons = {
 
 export const colors: ColorsTypes = {
   primary: "#0836af",
-  primaryBg: "rgb(249, 250, 251)",
+  gray50: "#f9fafb",
   gray600: "#4b5563",
 };
