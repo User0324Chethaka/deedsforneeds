@@ -2,6 +2,7 @@
 
 - [ ] run 'npm audit' and fix vulnerabilities before deployment
 - [ ] add Apache license for Roboto font
+- [ ] remove optional option in type.d.ts OnboardingViewProps
 
 # Library suggestions
 

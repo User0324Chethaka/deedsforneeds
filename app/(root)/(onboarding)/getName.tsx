@@ -17,11 +17,11 @@ const GetName = () => {
         "Invalid Name",
         "Please enter a name between 3 and 20 characters"
       );
-      setSubmitted(false);
     } else {
       console.log(name);
       router.push({ pathname: "/(root)/(onboarding)/getProfilePicture" });
     }
+    setSubmitted(false);
   };
 
   return (

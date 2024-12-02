@@ -8,6 +8,7 @@ import visibilityOff from "@/assets/icons/visibility_off.png";
 import mail from "@/assets/icons/mail.png";
 import lock from "@/assets/icons/lock.png";
 import person from "@/assets/icons/person.png";
+import camera from "@/assets/icons/camera.png";
 
 import {
   FontSizeTypes,
@@ -48,6 +49,7 @@ export const icons = {
   mail: mail,
   lock: lock,
   person: person,
+  camera: camera,
 };
 
 export const colors: ColorsTypes = {

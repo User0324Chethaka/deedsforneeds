@@ -63,9 +63,9 @@ interface ColorsTypes {
 }
 
 interface OnboardingViewProps {
-  title: string;
+  title?: string;
   buttonTitle?: string;
-  submitted: boolean;
-  children: ReactNode;
+  submitted?: boolean;
+  children?: ReactNode;
   onPress: () => void;
 }
