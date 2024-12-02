@@ -44,11 +44,11 @@ interface FontSizeTypes {
   "5xl": number;
 }
 
-// interface DimensionTypes {
-//   ww: number;
-//   wh: number;
-//   diameter: number;
-// }
+interface DimensionTypes {
+  ww: number;
+  wh: number;
+  diameter: number;
+}
 
 // interface WindowPaddingTypes {
 //   vertical: number;
@@ -64,8 +64,8 @@ interface ColorsTypes {
 
 interface OnboardingViewProps {
   title: string;
-  onPressTitle?: string;
+  buttonTitle?: string;
   submitted: boolean;
-  children?: ReactNode;
-  onPress?: () => void;
+  children: ReactNode;
+  onPress: () => void;
 }

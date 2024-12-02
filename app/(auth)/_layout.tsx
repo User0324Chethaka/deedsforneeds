@@ -9,7 +9,7 @@ const Layout = () => {
         name="signIn"
         options={{
           headerTitle: "",
-          headerStyle: { backgroundColor: colors.primaryBg },
+          headerStyle: { backgroundColor: colors.gray50 },
           headerShadowVisible: false,
           headerTintColor: colors.primary,
         }}
@@ -19,7 +19,7 @@ const Layout = () => {
         options={{
           headerTitle: "",
           headerStyle: {
-            backgroundColor: colors.primaryBg,
+            backgroundColor: colors.gray50,
           },
           headerShadowVisible: false,
           headerTintColor: colors.primary,
@@ -30,7 +30,7 @@ const Layout = () => {
         options={{
           headerTitle: "",
           headerStyle: {
-            backgroundColor: colors.primaryBg,
+            backgroundColor: colors.gray50,
           },
           headerShadowVisible: false,
           headerTintColor: colors.primary,

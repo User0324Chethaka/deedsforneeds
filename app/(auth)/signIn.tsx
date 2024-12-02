@@ -25,7 +25,7 @@ const SignIn = () => {
 
   return (
     <SafeAreaView className={`flex bg-gray-50 h-full px-[5vw]`}>
-      <StatusBar backgroundColor={colors.primaryBg} style="dark" />
+      <StatusBar backgroundColor={colors.gray50} style="dark" />
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={{ flex: 1 }}

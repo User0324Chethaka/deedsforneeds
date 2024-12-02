@@ -7,16 +7,23 @@ import visibility from "@/assets/icons/visibility.png";
 import visibilityOff from "@/assets/icons/visibility_off.png";
 import mail from "@/assets/icons/mail.png";
 import lock from "@/assets/icons/lock.png";
+import person from "@/assets/icons/person.png";
 
 import {
   FontSizeTypes,
-  // DimensionTypes,
+  DimensionTypes,
   // WindowPaddingTypes,
   ColorsTypes,
 } from "@/types/type";
 
-const { width, height, fontScale } = Dimensions.get("window");
+export const { width, height, fontScale } = Dimensions.get("window");
 const baseFontSize: number = width * 0.041 * fontScale;
+
+export const dimensions: DimensionTypes = {
+  ww: width,
+  wh: height,
+  diameter: Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2)),
+};
 
 export const fontSizes: FontSizeTypes = {
   sm: baseFontSize * 0.8,
@@ -40,6 +47,7 @@ export const icons = {
   visibilityOff: visibilityOff,
   mail: mail,
   lock: lock,
+  person: person,
 };
 
 export const colors: ColorsTypes = {
