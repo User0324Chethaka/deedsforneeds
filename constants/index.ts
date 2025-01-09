@@ -9,6 +9,11 @@ import mail from "@/assets/icons/mail.png";
 import lock from "@/assets/icons/lock.png";
 import person from "@/assets/icons/person.png";
 import camera from "@/assets/icons/camera.png";
+import toggleCamera from "@/assets/icons/toggle-camera.png";
+import flash from "@/assets/icons/flash.png";
+import flashOff from "@/assets/icons/flash_off.png";
+import close from "@/assets/icons/close.png";
+import gallery from "@/assets/icons/gallery.png";
 
 import {
   FontSizeTypes,
@@ -50,6 +55,11 @@ export const icons = {
   lock: lock,
   person: person,
   camera: camera,
+  toggleCamera: toggleCamera,
+  flash: flash,
+  flashOff: flashOff,
+  close: close,
+  gallery: gallery,
 };
 
 export const colors: ColorsTypes = {

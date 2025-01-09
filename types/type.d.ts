@@ -69,3 +69,14 @@ interface OnboardingViewProps {
   children?: ReactNode;
   onPress: () => void;
 }
+
+interface CameraProps {
+  // image: string;
+  setImage: React.Dispatch<React.SetStateAction<string>>;
+  cameraVisible: boolean;
+  setCameraVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+interface ToggleFlashButtonProps extends TouchableOpacityProps {
+  flashMode: "off" | "on" | "auto"; // Define the expected values for flashMode
+}
